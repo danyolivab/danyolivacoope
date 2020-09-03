@@ -27,6 +27,10 @@ class AdminController extends Controller
         return view('admin.create');
     }
 
+    public function newusers(){
+        return view('admin.newusers');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

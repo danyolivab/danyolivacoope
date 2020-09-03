@@ -40,6 +40,25 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="level_access" class="col-md-4 col-form-label text-md-right">Rol de Usuario</label>
+
+                            <div class="col-md-6">
+                                <select name="level_access" id="" class="form-control">
+                                    <option value="">-- Selecciona el Rol --</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="supervisor">Supervisor</option>
+                                    <option value="operador">Operador</option>
+                                </select>
+
+                                @error('level_access')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

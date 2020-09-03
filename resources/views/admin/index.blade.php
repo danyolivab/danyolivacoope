@@ -11,9 +11,9 @@
                     Mantenimiento Productos
                 </a>
 
-                <a class="btn btn-outline-success btn-lg">
+                <a class="btn btn-outline-success btn-lg" href="{{ route('admin.newusers')}}">
                     <i class="fas fa-users"></i>
-                    Mantenimiento usuarios
+                    Registrar usuarios
                 </a>
             </div>
         </div>
