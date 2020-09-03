@@ -21,24 +21,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/operaciones', 'OperacionController@index')->name('operaciones.index');
-Route::get('/operaciones/create', 'OperacionController@create')->name('operaciones.create');
-Route::post('/operaciones/store', 'OperacionController@store')->name('operaciones.store');
-Route::get('/operaciones/addproductos', 'OperacionController@addproductosform')->name('operaciones.addproductosform');
-Route::post('/operaciones/addproductos/store', 'OperacionController@storeproductos')->name('operaciones.storeproductos');
+Route::get('/operaciones', 'OperacionController@index')->name('operaciones.index')->middleware('revisaroperador');
+Route::get('/operaciones/create', 'OperacionController@create')->name('operaciones.create')->middleware('revisaroperador');
+Route::post('/operaciones/store', 'OperacionController@store')->name('operaciones.store')->middleware('revisaroperador');
+Route::get('/operaciones/addproductos', 'OperacionController@addproductosform')->name('operaciones.addproductosform')->middleware('revisaroperador');
+Route::post('/operaciones/addproductos/store', 'OperacionController@storeproductos')->name('operaciones.storeproductos')->middleware('revisaroperador');
 
 Route::get('/operaciones/{operacion}', 'OperacionController@show')->name('operaciones.show');
 Route::delete('/operaciones/{operacion}', 'OperacionController@destroy')->name('operaciones.destroy');
 
 //-------------------------------------------------------------------------------------------------------------
 // SUPERVISORES
-Route::get('/supervisor', 'SupervisorController@index')->name('supervisor.index');
-Route::get('/supervisor/{user}', 'SupervisorController@show')->name('supervisor.show');
-Route::get('/supervisor/operacion/{operacion}', 'SupervisorController@showdetail')->name('supervisor.showdetail');
+Route::get('/supervisor', 'SupervisorController@index')->name('supervisor.index')->middleware('revisarsuper');
+Route::get('/supervisor/{user}', 'SupervisorController@show')->name('supervisor.show')->middleware('revisarsuper');
+Route::get('/supervisor/operacion/{operacion}', 'SupervisorController@showdetail')->name('supervisor.showdetail')->middleware('revisarsuper');
 
 //-------------------------------------------------------------------------------------------------------------
 // ADMIN
-Route::get('/admin', 'AdminController@index')->name('admin.index');
-Route::get('/admin/create', 'AdminController@create')->name('admin.create');
-Route::post('/admin/store', 'AdminController@create')->name('admin.store');
+Route::get('/admin', 'AdminController@index')->name('admin.index')->middleware('revisaradmin');
+Route::get('/admin/create', 'AdminController@create')->name('admin.create')->middleware('revisaradmin');
+Route::post('/admin/store', 'AdminController@create')->name('admin.store')->middleware('revisaradmin');
 
