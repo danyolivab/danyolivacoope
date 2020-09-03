@@ -58,7 +58,14 @@
                         <a href={{ route('admin.listproductos') }} class="btn btn-danger">Cancelar</a>
                     </div>
                 </form>
-
+                @if (session('status'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Operación Exitosa!</strong> Se ha editado el producto
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

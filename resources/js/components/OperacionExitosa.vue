@@ -6,6 +6,9 @@
 
 <script>
 export default {
+    components:{
+        OperacionExitosa
+    },
     mounted(){
         this.$swal({
             position: 'top-end',

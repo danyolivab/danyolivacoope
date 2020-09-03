@@ -5,6 +5,7 @@
  */
 import VueSweetalert2 from 'vue-sweetalert2';
 require('./bootstrap');
+
 window.Vue = require('vue');
 
 /**

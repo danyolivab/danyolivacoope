@@ -54,7 +54,8 @@ class OperacionController extends Controller
             'producto_id' => $data['producto']
         ]);
 
-        return redirect()->route('operaciones.addproductosform');
+        $status = 'Hola';
+        return redirect()->route('operaciones.addproductosform')->with(compact('status'));
     }
 
     // FIN

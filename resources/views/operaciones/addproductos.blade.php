@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+
             <div class="col-md-8">
                 <h1>Añadir los productos de interes</h1>
 
@@ -26,24 +27,15 @@
                     </div>
                 </form>
 
+                @if (session('status'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Operación Exitosa!</strong> Se ha agreado el producto
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
-                @php
-                    //$oper = $ope->productos;
-                @endphp
-                <table class="table mt-2">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Productos Agregado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{-- @foreach ($ope->productos as $op)
-                            <tr>
-                                <td>{{$op}}</td>
-                            </tr>
-                        @endforeach --}}
-                    </tbody>
-                </table>
             </div>
 
         </div>

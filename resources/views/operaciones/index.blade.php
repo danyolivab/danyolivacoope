@@ -15,7 +15,7 @@
                     <i class="fas fa-plus"></i>
                     Nuevo</a>
                 <br>
-                <table class="table mt-2">
+                <table class="table mt-2 table-hover text-center">
                     <thead>
                         <tr>
                             <th>Orden</th>
@@ -35,21 +35,10 @@
                                 <td>{{$operacion->fecha_contacto}}</td>
                                 <td>{{$operacion->acuerdo}}</td>
                                 <td>
-                                    <div class="row">
                                     <a href="{{ route('operaciones.show' , ['operacion' => $operacion->id]) }}"
-                                         class="btn btn-primary btn-sm mr-2">
+                                         class="btn btn-primary btn-sm">
                                          <i class="fas fa-eye"></i>
                                     </a>
-
-                                    <form action="{{ route('operaciones.destroy', ['operacion' => $operacion->id]) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" value="X" class="btn btn-danger btn-sm">
-                                    </form>
-
-                                    <eliminar></eliminar>
-                                        {{-- <a href="" class="btn btn-danger btn-sm mr-2"><i class="fas fa-trash"></i></a> --}}
-                                    </div>
                                 </td>
 
                             </tr>

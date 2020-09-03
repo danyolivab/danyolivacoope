@@ -17,7 +17,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <p>Si no se muestra ningún detalle es porque ni hay ningun producto</p>
+            <p>Si no se muestra ningún detalle es porque no hay ningun producto agregado a la gestión</p>
             <a href={{ route('supervisor.index') }} class="btn btn-danger mt-5">Regresar</a>
 
             </div>

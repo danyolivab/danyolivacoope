@@ -29,7 +29,7 @@
                             type="text"
                             name="nombre"
                             value="{{ old('nombre') }}"
-                            placeholder="Código"
+                            placeholder="Nombre del producto"
                             class="form-control @error('nombre') is-invalid @enderror">
                         @error('nombre')
                             <span class="invalid-feedback d-block" role="alert">
@@ -61,6 +61,14 @@
                         <a href={{ route('admin.listproductos') }} class="btn btn-danger">Regresar</a>
                     </div>
                 </form>
+                @if (session('status'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Operación Exitosa!</strong> Se ha agreado el producto
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
             </div>
         </div>

@@ -70,7 +70,7 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-success">Confirmar Gestión</button>
+                    <button type="submit" class="btn btn-success">Crear Cliente</button>
                     <a href="" class="btn btn-danger">Cancelar</a>
 
                 </form>

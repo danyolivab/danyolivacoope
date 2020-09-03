@@ -95,8 +95,8 @@ class ProductoController extends Controller
         $producto->tipo = $data['tipo'];
         $producto->save();
 
-        //$status = true;
-        return redirect()->route('admin.listproductos');
+        $status = 'Hola';
+        return redirect()->route('admin.listproductos')->with(compact('status'));
     }
 
     /**
