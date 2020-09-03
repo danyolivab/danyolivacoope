@@ -4,16 +4,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <h3 class="text-primary text-center">Nuevos Productos</h3>
-                <form action="{{ route('admin.store') }}" method="post" autocomplete="off" novalidate>
+                <h3 class="text-primary text-center">Editar Producto</h3>
+                <form action="{{ route('admin.updateproducto', ['producto' => $producto->id]) }}" method="post" autocomplete="off" novalidate>
                     @csrf
-
+                    @method('PUT')
                     <div class="form-group">
                         <label for="codigo">Código Producto</label>
                         <input
                             type="text"
                             name="codigo"
-                            value="{{ old('codigo') }}"
+                            value="{{ $producto->codigo }}"
                             placeholder="Código"
                             class="form-control @error('codigo') is-invalid @enderror">
                         @error('codigo')
@@ -28,7 +28,7 @@
                         <input
                             type="text"
                             name="nombre"
-                            value="{{ old('nombre') }}"
+                            value="{{ $producto->nombre }}"
                             placeholder="Código"
                             class="form-control @error('nombre') is-invalid @enderror">
                         @error('nombre')
@@ -53,12 +53,9 @@
                         @enderror
                     </div>
 
-
-
-
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Agregar Producto</button>
-                        <a href={{ route('admin.listproductos') }} class="btn btn-danger">Regresar</a>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <a href={{ route('admin.listproductos') }} class="btn btn-danger">Cancelar</a>
                     </div>
                 </form>
 

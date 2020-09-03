@@ -5,8 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <h3 class="text-primary text-center">Vista de Administrador</h3>
-                <a href="{{ route('admin.create') }}" class="btn btn-outline-primary">Productos</a>
-                <a class="btn btn-outline-success">Registro de usuarios</a>
+                <br>
+                <a href="{{ route('admin.listproductos') }}" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-plus"></i>
+                    Mantenimiento Productos
+                </a>
+
+                <a class="btn btn-outline-success btn-lg">
+                    <i class="fas fa-users"></i>
+                    Mantenimiento usuarios
+                </a>
             </div>
         </div>
     </div>

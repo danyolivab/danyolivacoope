@@ -42,9 +42,14 @@ Route::get('/supervisor/operacion/{operacion}', 'SupervisorController@showdetail
 // ADMIN
 Route::get('/admin', 'AdminController@index')->name('admin.index')->middleware('revisaradmin');
 Route::get('/admin/create', 'AdminController@create')->name('admin.create')->middleware('revisaradmin');
-Route::post('/admin/store', 'AdminController@create')->name('admin.store')->middleware('revisaradmin');
+Route::post('/admin/store', 'ProductoController@store')->name('admin.store')->middleware('revisaradmin');
 
 //-------------------------------------------------------------------------------------------------------------
 Route::get('/asociados/createcliente', 'AsociadoController@create')->name('asociado.create');
 Route::post('/asociados/store', 'AsociadoController@store')->name('asociado.store');
+
+Route::get('/admin/productos', 'ProductoController@index')->name('admin.listproductos');
+Route::get('/admin/{producto}/edit', 'ProductoController@edit')->name('admin.editproducto');
+Route::put('/admin/{producto}', 'ProductoController@update')->name('admin.updateproducto');
+
 

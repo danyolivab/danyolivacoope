@@ -5,6 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h3 class="text-primary text-center">Nuevo Cliente para Gestión</h3>
+
                 <small >Una vez finalizada la creación regrese a la vista anterior para continuar con la gestión</small>
 
                 <form action="{{ route('asociado.store') }}" method="post" autocomplete="off" novalidate>

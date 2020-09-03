@@ -35,17 +35,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'codigo' => 'required',
-            'nombre' => 'required',
-            'tipo' => 'required'
-        ]);
 
-        $producto = new Producto();
-        $producto->codigo = $data['codigo'];
-        $producto->nombre = $data['nombre'];
-        $producto->tipo = $data['tipo'];
-        $producto->save();
     }
 
     /**
