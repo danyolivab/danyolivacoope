@@ -46,13 +46,13 @@ Route::post('/admin/store', 'ProductoController@store')->name('admin.store')->mi
 
 //-------------------------------------------------------------------------------------------------------------
 // Rutas para mantenimientos para clientes y productos
-Route::get('/asociados/createcliente', 'AsociadoController@create')->name('asociado.create');
-Route::post('/asociados/store', 'AsociadoController@store')->name('asociado.store');
+Route::get('/asociados/createcliente', 'AsociadoController@create')->name('asociado.create')->middleware('revisaroperador');
+Route::post('/asociados/store', 'AsociadoController@store')->name('asociado.store')->middleware('revisaroperador');
 
-Route::get('/admin/productos', 'ProductoController@index')->name('admin.listproductos');
-Route::get('/admin/{producto}/edit', 'ProductoController@edit')->name('admin.editproducto');
-Route::put('/admin/{producto}', 'ProductoController@update')->name('admin.updateproducto');
-Route::get('/admin/newusers', 'AdminController@newusers')->name('admin.newusers');
+Route::get('/admin/productos', 'ProductoController@index')->name('admin.listproductos')->middleware('revisaradmin');
+Route::get('/admin/{producto}/edit', 'ProductoController@edit')->name('admin.editproducto')->middleware('revisaradmin');
+Route::put('/admin/{producto}', 'ProductoController@update')->name('admin.updateproducto')->middleware('revisaradmin');
+Route::get('/admin/newusers', 'AdminController@newusers')->name('admin.newusers')->middleware('revisaradmin');
 
 
 
