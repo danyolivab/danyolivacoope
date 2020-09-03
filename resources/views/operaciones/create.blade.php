@@ -5,7 +5,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
 
+                <h3 class="text-primary mb-4">Nuevo Gestión</h3>
 
+                <a href="{{ route('asociado.create') }}" class="btn btn-primary align-left mb-2">
+                    <i class="fas fa-plus mr-2"></i>Nuevo Cliente
+                </a>
+
+                <br>
+                <small>Si no existe el asociado cree uno nuevo y luego realice la gestión</small><hr>
                 <form action="{{ route('operaciones.store') }}" method="post" autocomplete="off" novalidate>
                     @csrf
 
@@ -55,13 +62,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="dpi">Acuerdo</label>
+                        <label for="acuerdo">Acuerdo</label>
                         <input
                             type="text"
                             name="acuerdo"
                             value="{{ old('acuerdo') }}"
                             placeholder="Acuerdo"
-                            class="form-control @error('dpi') is-invalid @enderror">
+                            class="form-control @error('acuerdo') is-invalid @enderror">
                         @error('acuerdo')
                             <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{$message}}</strong>
@@ -70,7 +77,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Agregar Productos</button>
+                        <button type="submit" class="btn btn-success">Confirmar Gestión</button>
                         <a href={{ route('operaciones.index') }} class="btn btn-danger">Regresar</a>
                     </div>
                 </form>

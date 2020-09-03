@@ -24,7 +24,7 @@ class AsociadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('operaciones.createcliente');
     }
 
     /**
@@ -35,7 +35,26 @@ class AsociadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nombre' => 'required',
+            'direccion' => 'required',
+            'telefono' => 'required',
+            'dpi' => 'required'
+        ]);
+
+
+
+        $asociado = new Asociado();
+        $asociado->nombre = $data['nombre'];
+        $asociado->direccion = $data['direccion'];
+        $asociado->telefono = $data['telefono'];
+        $asociado->dpi = $data['dpi'];
+        $asociado->created_at = date('Y-m-d H:i:s');
+        $asociado->updated_at = date('Y-m-d H:i:s');
+        $asociado->save();
+
+        return redirect()->route('operaciones.create');
+
     }
 
     /**

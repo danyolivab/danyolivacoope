@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//--------------------------------------------------------------------------------------------------------------
+// OPERADORES
 Route::get('/operaciones', 'OperacionController@index')->name('operaciones.index')->middleware('revisaroperador');
 Route::get('/operaciones/create', 'OperacionController@create')->name('operaciones.create')->middleware('revisaroperador');
 Route::post('/operaciones/store', 'OperacionController@store')->name('operaciones.store')->middleware('revisaroperador');
@@ -41,4 +43,8 @@ Route::get('/supervisor/operacion/{operacion}', 'SupervisorController@showdetail
 Route::get('/admin', 'AdminController@index')->name('admin.index')->middleware('revisaradmin');
 Route::get('/admin/create', 'AdminController@create')->name('admin.create')->middleware('revisaradmin');
 Route::post('/admin/store', 'AdminController@create')->name('admin.store')->middleware('revisaradmin');
+
+//-------------------------------------------------------------------------------------------------------------
+Route::get('/asociados/createcliente', 'AsociadoController@create')->name('asociado.create');
+Route::post('/asociados/store', 'AsociadoController@store')->name('asociado.store');
 
